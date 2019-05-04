@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue.js</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+
+    <!-- название приложения -->
+    <div id="app">
+        <h1>Начало работы</h1>
+
+        <h3> вывод значения переменной на экран</h3>
+        <p> {{title}} </p>
+
+        <!-- событие при клике -->
+        <!-- <button v-on:click="title='Sex'">Click me, sempai</button> -->
+
+        <!-- сокращённая форма записи события -->
+        <!-- <button @click="title='Sex'">Click me, sempai</button> -->
+
+        <!-- работа с атрибутами -->
+        <!-- <p v-bind:class="stylecss"> Цвет : {{stylecss}} </p> -->
+
+        <!-- сокращённая форма записи атрибута -->
+        <p :class="stylecss"> Цвет : {{stylecss}} </p>
+
+        <input @input="stylecss = $event.target.value" type="text">
+
+        <button @click="changetext">Click me, sempai</button>
+
+        <h1>Обработанные свойства</h1>
+
+        <input @input="increment($event.target.value)" type="text">
+        <p> {{value}} </p>
+        <p> {{doublevalue}} </p>
+
+        <h1> Условия, списки и циклы</h1>
+
+        <!-- условие удаляющие объект из DOM-->
+        <p v-if="show"> <b>Show true.</b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit inventore dolore
+            officia autem
+            ullam obcaecati saepe minima molestiae enim iste quaerat tempora assumenda harum totam delectus iure,
+            deleniti blanditiis veritatis!</p>
+        <!-- если условие не стработало-->
+        <p v-else> <b>Show false.</b> Nesciunt corrupti fugiat id. Lorem ipsum dolor, sit amet consectetur adipisicing
+            elit. Expedita
+            laborum totam fuga distinctio, minima, optio consequuntur harum sed ratione vitae eaque? Nostrum deserunt
+            sint consequuntur aliquid alias recusandae obcaecati rerum.</p>
+
+        <!-- условие скрывающее объект в DOM-->
+        <!-- <p v-show="show">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit inventore dolore officia autem ullam obcaecati saepe minima molestiae enim iste quaerat tempora assumenda harum totam delectus iure, deleniti blanditiis veritatis!</p> -->
+
+
+        <h3>
+            при нажатии на кнопку значение меняется на противоположное ( работает только для boolean элементов )
+        </h3>
+
+        <button @click=" show = !show ">Скрыть показать</button>
+
+
+
+        <h3>простой вывод элемента</h3>
+
+        <ul>
+            <li>{{cars[2].model}} </li>
+        </ul>
+
+        <h3>Цикличный вывод всего массива</h3>
+
+        <ul>
+            <li v-for="(car, i) in cars"># {{i + 1}} {{car.model}} скорость : {{car.speed}} </li>
+        </ul>
+
+        <h1> Работа с фильтрами     </h1>
+                
+        <!-- Вывод с помощью обработанного свойства -->
+        <!-- <p> {{ showMessage }} </p> -->
+        
+        <!-- Вывод с локальным фильром -->
+        <p > {{ message | lowercase }} </p>
+
+          <!-- Вывод с локальным и глобальным фильрами -->
+        <p > {{ message | lowercase | capitalize }} </p>
+
+
+        <ul>
+            <li>{{cars[2].model}} </li>
+        </ul>
+
+        <ul>
+            <li v-for="(car, i) in cars"># {{i + 1}} {{car.model}} скорость : {{car.speed}} </li>
+        </ul>
+
+        <h1>Создание компонентов</h1>
+
+        <app-car></app-car>
+
+
+    </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
