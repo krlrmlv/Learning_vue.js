@@ -78,16 +78,16 @@
             <li v-for="(car, i) in cars"># {{i + 1}} {{car.model}} скорость : {{car.speed}} </li>
         </ul>
 
-        <h1> Работа с фильтрами     </h1>
-                
+        <h1> Работа с фильтрами </h1>
+
         <!-- Вывод с помощью обработанного свойства -->
         <!-- <p> {{ showMessage }} </p> -->
-        
-        <!-- Вывод с локальным фильром -->
-        <p > {{ message | lowercase }} </p>
 
-          <!-- Вывод с локальным и глобальным фильрами -->
-        <p > {{ message | lowercase | capitalize }} </p>
+        <!-- Вывод с локальным фильром -->
+        <p> {{ message | lowercase }} </p>
+
+        <!-- Вывод с локальным и глобальным фильрами -->
+        <p> {{ message | lowercase | capitalize }} </p>
 
 
         <ul>
@@ -98,12 +98,16 @@
             <li v-for="(car, i) in cars"># {{i + 1}} {{car.model}} скорость : {{car.speed}} </li>
         </ul>
 
-        <h1>Создание компонентов</h1>
+        <h1> Компоненты </h1>
+
+        
 
         <app-car></app-car>
-
-
+        <app-car2></app-car2>
     </div>
+
+
+
 
 
 
